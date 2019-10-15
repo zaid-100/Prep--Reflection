@@ -1,1 +1,51 @@
+<html>
+    <head>
+    <style>
+        body {background-color: antiquewhite;
+        font-family: sans-serif;
+            font-size: 20px;
+            padding-right: 40%;}
+            .problem {
+                height: 50%;
+                width: 100%;
+                background-image: url("problem.png");
+            background-size: cover;
+        }
+        pre{
+            color: blue;
+        }
+        </style>
+    </head>
+<body>
+    <h1> Reflection </h1>
+    <h2> What i understood through difficulty: </h2>
+    <p> I remember the difficulty i faced in trying to understand CSS selectors the first time we played the CSS diner game. We played that game in 2 different classes and in the first class i was completely clueless. I was able to drag through the first 5 rounds by doing just random trials and not completely understanding why it worked when it did. The next time, though, when we played the same game, i had a fresh mind so I tried to understand what was going on. I grasped the concept of parent and children element and why we could select specific plates. I distinctly remember thinking hard on a question my lab partner asked and finally figuring it out. The question was about the nth-child selector and how we could use it on any round basically and i showed her how that was possible by demonstration, in turn making my own understanding of the selectors much stronger </p>
+    <br>
+    <h2> What I Still Don't Understand </h2>
+    <p> One of the things that i still don't understand is why data that is bound to a function cannot be appended to an element which has sepparate data bound to it. For example in our "studio Ghibli" lab project, i succesfully bound the "people" data to a function, i made a function so that divisions with classes that i set appear, but failed to append it to the respective divisions that were made previously that showed the overview of the movies. It didn't seem to make any sense since the content of the second data file did appear outside of body but it wouldn't go into what was already made.
+An explanation with image is shown below: </p>
+    <div class="problem"></div>
+    <p>The LAST code we tried to use was this (note: this is filled with errors but it is here to show the general direction of what we were trying to do.</p>
+    <pre>
+    d3.json("https://ghibliapi.herokuapp.com/people/")
+var filPromise=d3.json("https://ghibliapi.herokuapp.com/people/");
+filPromise.then(
+function(data)
+    {
+        displaypeople(data)
+        console.log("gothere")
+    })
 
+var displaypeople = function(data)
+    {
+        d3.selectall("li")
+        .data(data)
+        .enter()
+        .append("div")
+        .attr("class", "people")
+        .text(function(data) {return data.name})
+    }
+    </pre>
+    <p> I couldn't figure out why it was happening and after bending my code and trying different things (even making it worse). I gave up and started to work on this prep, leaving the lab in its last functioning state. </p>
+    </body>
+</html>
